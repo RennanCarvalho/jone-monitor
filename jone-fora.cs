@@ -8,6 +8,7 @@ namespace jone_fora
         private List<Data> _datas = new();
         private Data? _data;
         private TimeSpan _cronometro;
+        private bool _clickThrough = true;
 
         public JoneFora()
         {
@@ -31,6 +32,11 @@ namespace jone_fora
 
         private void JoneFora_Load(object sender, EventArgs e)
         {
+            AtualizarLabels();
+        }
+
+        private void AtualizarLabels()
+        {
             var totalDias = _datas.Count;
             var totalSaidas = _datas.Sum(x => x.QuantidadeSaidas);
             var totalTempoTicks = _datas.Sum(x => x.QuantidadeMinutos.Ticks);
@@ -51,10 +57,7 @@ namespace jone_fora
             SaidaLabel.Text = $"Saídas      : {_data.QuantidadeSaidas}";
             SaidaPorDiaLabel.Text = $"Saída/Dia   : {mediaSaidas}";
             TempoPorSaidaLabel.Text = $"Tempo/Saída : {mediaTempo:mm\\:ss}";
-
         }
-
-
 
         private void EventoBt_Click(object sender, EventArgs e)
         {
@@ -63,6 +66,7 @@ namespace jone_fora
             _logs.Add(new Log { DataHora = DateTime.Now, Evento = EventoBt.Text });
             EventoBt.Text = EventoBt.Text == "Saiu" ? "Voltou" : "Saiu";
             SaidaLabel.Text = $"Saídas      : {_data!.QuantidadeSaidas.ToString()}";
+            AtualizarLabels();
         }
 
         private void Cronometro_Tick(object sender, EventArgs e)
@@ -81,11 +85,7 @@ namespace jone_fora
         private void JoneFora_Shown(object sender, EventArgs e)
         {
             var area = Screen.PrimaryScreen!.WorkingArea;
-
-            this.Location = new Point(
-                area.Right - this.Width - 10,
-                area.Bottom - this.Height - 10
-            );
+            this.Location = new Point(area.Right - this.Width - 10, area.Top + 10);
         }
 
         private void JoneFora_DoubleClick(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace jone_fora
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x00000080; // WS_EX_TOOLWINDOW
+                cp.ExStyle |= 0x00000080;
                 return cp;
             }
         }

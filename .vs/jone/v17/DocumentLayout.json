@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\sof\\jone\\",
+  "WorkspaceRootPath": "C:\\sof\\jone-monitor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone\\jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone\\jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone-monitor\\jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone-monitor\\jone-fora.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:jone-fora.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone-monitor\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|C:\\sof\\jone-monitor\\jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,20 +26,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "jone-fora.cs [Projeto]",
-              "DocumentMoniker": "C:\\sof\\jone\\jone-fora.cs",
+              "DocumentIndex": 3,
+              "Title": "jone-fora.cs [Design]",
+              "DocumentMoniker": "C:\\sof\\jone-monitor\\jone-fora.cs",
               "RelativeDocumentMoniker": "jone-fora.cs",
-              "ToolTip": "C:\\sof\\jone\\jone-fora.cs [Projeto]",
-              "RelativeToolTip": "jone-fora.cs [Projeto]",
+              "ToolTip": "C:\\sof\\jone-monitor\\jone-fora.cs [Design]",
+              "RelativeToolTip": "jone-fora.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-15T14:39:15.516Z",
               "IsPinned": true,
-              "EditorCaption": " [Projeto]"
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Data.cs",
+              "DocumentMoniker": "C:\\sof\\jone-monitor\\Data.cs",
+              "RelativeDocumentMoniker": "Data.cs",
+              "ToolTip": "C:\\sof\\jone-monitor\\Data.cs",
+              "RelativeToolTip": "Data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T16:38:24.057Z",
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -59,26 +76,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Data.cs",
-              "DocumentMoniker": "C:\\sof\\jone\\Data.cs",
-              "RelativeDocumentMoniker": "Data.cs",
-              "ToolTip": "C:\\sof\\jone\\Data.cs",
-              "RelativeToolTip": "Data.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABYAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "jone-fora.Designer.cs",
+              "DocumentMoniker": "C:\\sof\\jone-monitor\\jone-fora.Designer.cs",
+              "RelativeDocumentMoniker": "jone-fora.Designer.cs",
+              "ToolTip": "C:\\sof\\jone-monitor\\jone-fora.Designer.cs",
+              "RelativeToolTip": "jone-fora.Designer.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T16:38:24.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-16T12:10:55.617Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "jone-fora.cs",
-              "DocumentMoniker": "C:\\sof\\jone\\jone-fora.cs",
+              "DocumentMoniker": "C:\\sof\\jone-monitor\\jone-fora.cs",
               "RelativeDocumentMoniker": "jone-fora.cs",
-              "ToolTip": "C:\\sof\\jone\\jone-fora.cs",
+              "ToolTip": "C:\\sof\\jone-monitor\\jone-fora.cs",
               "RelativeToolTip": "jone-fora.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwCsAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-15T14:36:55.084Z",
               "EditorCaption": ""
