@@ -11,11 +11,7 @@
       "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:jone-fora.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone-monitor\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|c:\\sof\\jone-monitor\\jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|C:\\sof\\jone-monitor\\jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E3D7D716-0B83-4263-A114-0F1D30F6568D}|Jone.csproj|solutionrelative:jone-fora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "jone-fora.cs [Projeto]",
               "DocumentMoniker": "C:\\sof\\jone-monitor\\jone-fora.cs",
               "RelativeDocumentMoniker": "jone-fora.cs",
@@ -40,20 +36,6 @@
               "WhenOpened": "2025-12-15T14:39:15.516Z",
               "IsPinned": true,
               "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Data.cs",
-              "DocumentMoniker": "C:\\sof\\jone-monitor\\Data.cs",
-              "RelativeDocumentMoniker": "Data.cs",
-              "ToolTip": "C:\\sof\\jone-monitor\\Data.cs",
-              "RelativeToolTip": "Data.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T16:38:24.057Z",
-              "IsPinned": true,
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -83,9 +65,9 @@
               "RelativeDocumentMoniker": "jone-fora.Designer.cs",
               "ToolTip": "C:\\sof\\jone-monitor\\jone-fora.Designer.cs",
               "RelativeToolTip": "jone-fora.Designer.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwB0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAowH0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T12:10:55.617Z",
+              "WhenOpened": "2025-12-17T13:13:23.91Z",
               "EditorCaption": ""
             },
             {
@@ -96,7 +78,7 @@
               "RelativeDocumentMoniker": "jone-fora.cs",
               "ToolTip": "C:\\sof\\jone-monitor\\jone-fora.cs",
               "RelativeToolTip": "jone-fora.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAANcAAAAAAAAAAAAqwOEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-15T14:36:55.084Z",
               "EditorCaption": ""

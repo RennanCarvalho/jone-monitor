@@ -1,9 +1,18 @@
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace jone_fora
 {
     public partial class JoneFora : Form
     {
+        [DllImport("user32.dll")]
+        private static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(
+            IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+
+
         private List<Log> _logs = new();
         private List<Data> _datas = new();
         private Data? _data;
@@ -33,6 +42,7 @@ namespace jone_fora
         private void JoneFora_Load(object sender, EventArgs e)
         {
             AtualizarLabels();
+            EnableDrag(this);
         }
 
         private void AtualizarLabels()
@@ -49,7 +59,7 @@ namespace jone_fora
             // média de saída por dia
             var mediaSaidas = totalDias == 0
                 ? 0
-                : (double)totalSaidas / totalDias;
+                : Math.Floor((double)totalSaidas / totalDias);
 
             /* Labels */
             CronometroLabel.Text = _cronometro.ToString(@"hh\:mm\:ss");
@@ -101,6 +111,134 @@ namespace jone_fora
                 cp.ExStyle |= 0x00000080;
                 return cp;
             }
+        }
+
+        private const int _margin = 10;
+
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCHITTEST = 0x84;
+            const int HTCLIENT = 1;
+            const int HTCAPTION = 2;
+            const int WM_EXITSIZEMOVE = 0x232;
+            const int WM_NCLBUTTONDBLCLK = 0xA3;
+
+            if (m.Msg == WM_NCLBUTTONDBLCLK)
+                return; // bloqueia maximizar
+
+            if (m.Msg == WM_NCHITTEST)
+            {
+                base.WndProc(ref m);
+                if ((int)m.Result == HTCLIENT)
+                {
+                    m.Result = (IntPtr)HTCAPTION;
+                    return;
+                }
+                return;
+            }
+            if (m.Msg == WM_EXITSIZEMOVE)
+            {
+                // aqui é o "MouseUp" real do drag nativo
+                SnapToNearestCorner();
+            }
+
+            base.WndProc(ref m);
+        }
+
+        private void SnapToNearestCorner()
+        {
+            var screen = Screen.FromControl(this);
+            var area = screen.WorkingArea;
+
+            int centerX = Left + Width / 2;
+            int centerY = Top + Height / 2;
+
+            int screenCenterX = area.Left + area.Width / 2;
+            int screenCenterY = area.Top + area.Height / 2;
+
+            bool isLeft = centerX < screenCenterX;
+            bool isTop = centerY < screenCenterY;
+
+            int x = isLeft
+                ? area.Left + _margin
+                : area.Right - Width - _margin;
+
+            int y = isTop
+                ? area.Top + _margin
+                : area.Bottom - Height - _margin;
+
+            AnimateToLocation(new Point(x, y));
+        }
+        private void AnimateToLocation(Point target)
+        {
+            // Implementação simples de animação
+            System.Windows.Forms.Timer animationTimer = new System.Windows.Forms.Timer();
+            animationTimer.Interval = 15;
+            int steps = 8;
+            int currentStep = 0;
+
+            Point start = this.Location;
+
+            animationTimer.Tick += (s, e) =>
+            {
+                currentStep++;
+                if (currentStep >= steps)
+                {
+                    this.Location = target;
+                    animationTimer.Stop();
+                    animationTimer.Dispose();
+                }
+                else
+                {
+                    float t = (float)currentStep / steps;
+                    // Easing function simples (quadrática)
+                    t = t * t;
+
+                    int x = start.X + (int)((target.X - start.X) * t);
+                    int y = start.Y + (int)((target.Y - start.Y) * t);
+
+                    this.Location = new Point(x, y);
+                }
+            };
+
+            animationTimer.Start();
+        }
+
+        private void EnableDrag(Control control)
+        {
+            control.MouseDown += (s, e) =>
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    ReleaseCapture();
+                    SendMessage(this.Handle, 0xA1, (IntPtr)2, IntPtr.Zero);
+                }
+            };
+
+            foreach (Control child in control.Controls)
+                EnableDrag(child);
+        }
+
+        System.Windows.Forms.Timer hoverTimer;
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            this.Opacity = 0.7;
+
+            hoverTimer = new System.Windows.Forms.Timer();
+            hoverTimer.Interval = 50; // rápido o suficiente
+            hoverTimer.Tick += HoverTimer_Tick;
+            hoverTimer.Start();
+        }
+
+        private void HoverTimer_Tick(object? sender, EventArgs e)
+        {
+            var mousePos = this.PointToClient(Cursor.Position);
+            bool inside = this.ClientRectangle.Contains(mousePos);
+
+            this.Opacity = inside ? 1.0 : 0.7;
         }
     }
 }
