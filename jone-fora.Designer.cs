@@ -36,6 +36,7 @@
             Cronometro = new System.Windows.Forms.Timer(components);
             SaidaPorDiaLabel = new Label();
             TempoPorSaidaLabel = new Label();
+            FecharBt = new Button();
             SuspendLayout();
             // 
             // DataLabel
@@ -101,12 +102,25 @@
             TempoPorSaidaLabel.TabIndex = 1;
             TempoPorSaidaLabel.Text = "Tempo/Saída : ";
             // 
+            // FecharBt
+            // 
+            FecharBt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            FecharBt.Font = new Font("Segoe UI", 7F);
+            FecharBt.Location = new Point(180, 0);
+            FecharBt.Name = "FecharBt";
+            FecharBt.Size = new Size(20, 20);
+            FecharBt.TabIndex = 5;
+            FecharBt.Text = "✖";
+            FecharBt.UseVisualStyleBackColor = true;
+            FecharBt.Click += FecharBt_Click;
+            // 
             // JoneFora
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuBar;
             ClientSize = new Size(200, 200);
+            Controls.Add(FecharBt);
             Controls.Add(EventoBt);
             Controls.Add(CronometroLabel);
             Controls.Add(TempoPorSaidaLabel);
@@ -120,10 +134,6 @@
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "jone";
             TopMost = true;
-            FormClosing += JoneFora_FormClosing;
-            Load += JoneFora_Load;
-            Shown += JoneFora_Shown;
-            DoubleClick += JoneFora_DoubleClick;
             ResumeLayout(false);
         }
 
@@ -136,5 +146,6 @@
         private System.Windows.Forms.Timer Cronometro;
         private Label SaidaPorDiaLabel;
         private Label TempoPorSaidaLabel;
+        private Button FecharBt;
     }
 }
